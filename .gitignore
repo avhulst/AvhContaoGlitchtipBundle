@@ -1,0 +1,20 @@
+# Composer
+/composer.lock
+/vendor/
+
+# JS
+node_modules
+yarn.lock
+
+# PhpUnit
+/.phpunit.result.cache
+/phpunit.xml
+
+# Tools
+/tools/*/vendor
+
+# OS
+.DS_Store
+Thumbs.db
+.idea
+.vscode

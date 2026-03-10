@@ -1,0 +1,25 @@
+{
+    "name": "avh/contao-glitchtip-bundle",
+    "description": "Glitchtip (Sentry-compatible) error tracking integration for Contao CMS",
+    "type": "contao-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andreas van Hulst",
+            "homepage": "https://www.vanhulst.de"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "contao/core-bundle": "^5.3",
+        "sentry/sentry-symfony": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Avh\\Contao\\GlitchtipBundle\\": "src/"
+        }
+    },
+    "extra": {
+        "contao-manager-plugin": "Avh\\Contao\\GlitchtipBundle\\ContaoManager\\Plugin"
+    }
+}
