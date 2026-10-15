@@ -21,5 +21,23 @@
     },
     "extra": {
         "contao-manager-plugin": "Avh\\Contao\\GlitchtipBundle\\ContaoManager\\Plugin"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^12.4"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Avh\\Contao\\GlitchtipBundle\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "contao-components/installer": true,
+            "contao/manager-plugin": true,
+            "php-http/discovery": true
+        }
+    },
+    "scripts": {
+        "tests": "@php vendor/bin/phpunit"
     }
 }
