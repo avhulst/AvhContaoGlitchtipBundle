@@ -8,6 +8,7 @@ yarn.lock
 
 # PhpUnit
 /.phpunit.result.cache
+/.phpunit.cache
 /phpunit.xml
 
 # Tools

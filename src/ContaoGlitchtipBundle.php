@@ -25,6 +25,18 @@ class ContaoGlitchtipBundle extends AbstractBundle
                 'environment' => '%kernel.environment%',
                 'send_default_pii' => false,
                 'traces_sample_rate' => 0.2,
+                // Sentry matches with is_a(), so subclasses are covered too. The class
+                // names are strings to avoid a hard dependency on these classes.
+                'ignore_exceptions' => [
+                    // Contao control flow (redirects, Ajax redirects, empty responses)
+                    'Contao\CoreBundle\Exception\ResponseException',
+                    // 404 and bot noise
+                    'Contao\CoreBundle\Exception\NotFoundException',
+                    'Contao\UnusedArgumentsException',
+                    'Contao\CoreBundle\Exception\InvalidRequestTokenException',
+                    'Symfony\Component\HttpKernel\Exception\NotFoundHttpException',
+                    'Symfony\Component\Security\Core\Exception\AccessDeniedException',
+                ],
             ],
             'messenger' => [
                 'enabled' => true,
