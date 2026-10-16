@@ -48,7 +48,7 @@ These exceptions are not reported (`options.ignore_exceptions`). Sentry matches 
 | Exception | Reason |
 |---|---|
 | `Contao\CoreBundle\Exception\ResponseException` | Control flow: Contao throws redirects, Ajax redirects and empty responses (`RedirectResponseException`, `AjaxRedirectResponseException`, `NoContentResponseException`) as exceptions. |
-| `Contao\CoreBundle\Exception\NotFoundException` | 404 noise: `PageNotFoundException` for unknown URLs, mostly from bots and scanners. |
+| `Contao\CoreBundle\Exception\NotFoundException` | 404 noise: `PageNotFoundException` for unknown URLs, mostly from bots and scanners. Contao also throws the base class itself in the back end when a record or file no longer exists (e.g. `Cannot load record "tl_page.id=20"` in `DC_Table`, `DC_Folder` and the CSV import), usually after it was deleted or through an outdated link. |
 | `Contao\UnusedArgumentsException` | 404 noise: URLs with extra path fragments that no module consumed. |
 | `Contao\CoreBundle\Exception\InvalidRequestTokenException` | Expired or missing CSRF tokens from old forms and bots, answered with 400. |
 | `Symfony\Component\HttpKernel\Exception\NotFoundHttpException` | 404 noise from routes that do not exist. |

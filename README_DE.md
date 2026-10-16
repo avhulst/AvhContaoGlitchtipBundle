@@ -48,7 +48,7 @@ Diese Exceptions werden nicht gemeldet (`options.ignore_exceptions`). Sentry ver
 | Exception | Begründung |
 |---|---|
 | `Contao\CoreBundle\Exception\ResponseException` | Kontrollfluss: Contao wirft Redirects, Ajax-Redirects und leere Antworten (`RedirectResponseException`, `AjaxRedirectResponseException`, `NoContentResponseException`) als Exception. |
-| `Contao\CoreBundle\Exception\NotFoundException` | 404-Rauschen: `PageNotFoundException` bei unbekannten URLs, meist von Bots und Scannern. |
+| `Contao\CoreBundle\Exception\NotFoundException` | 404-Rauschen: `PageNotFoundException` bei unbekannten URLs, meist von Bots und Scannern. Contao wirft die Basisklasse auch selbst im Backend, wenn ein Datensatz oder eine Datei nicht mehr existiert (z. B. `Cannot load record "tl_page.id=20"` in `DC_Table`, `DC_Folder` und beim CSV-Import), meist nach dem Löschen oder über einen veralteten Link. |
 | `Contao\UnusedArgumentsException` | 404-Rauschen: URLs mit zusätzlichen Pfadteilen, die kein Modul verarbeitet hat. |
 | `Contao\CoreBundle\Exception\InvalidRequestTokenException` | Abgelaufene oder fehlende CSRF-Tokens aus alten Formularen und von Bots, beantwortet mit 400. |
 | `Symfony\Component\HttpKernel\Exception\NotFoundHttpException` | 404-Rauschen von Routen, die es nicht gibt. |
